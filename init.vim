@@ -10,6 +10,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'ctrlp.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'Pychimp/vim-luna'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-unimpaired'
