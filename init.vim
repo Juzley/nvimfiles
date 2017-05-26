@@ -9,11 +9,11 @@ autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Pychimp/vim-luna'
-Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-unimpaired'
+Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 call plug#end()
 
@@ -31,6 +31,9 @@ set cino=(0,:0
 " Turn on line numbers, and use relative line numbers
 set number
 set relativenumber
+
+" Turn on auto-write, mainly for write-on-make
+set autowrite
 
 " Set the colorscheme
 colorscheme luna-term
