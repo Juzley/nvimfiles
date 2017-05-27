@@ -15,6 +15,8 @@ Plug 'Pychimp/vim-luna'
 Plug 'tpope/vim-unimpaired'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'elmcast/elm-vim'
+Plug 'elixir-lang/vim-elixir'
 call plug#end()
 
 "--------------- 
