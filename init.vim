@@ -19,6 +19,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'elmcast/elm-vim'
 Plug 'elixir-lang/vim-elixir'
+Plug 'mileszs/ack.vim'
 
 " Source a local init.vim, to allow per-machine settings, if it exists.
 " Note that we do this within the plugged section to allow the local init.vim
@@ -70,8 +71,13 @@ autocmd QuickFixCmdPost    l* nested lwindow
 "--------------
 " Key mappings
 "--------------
+" Use , forleader
+let mapleader = ","
+
 " Ctrl+N toggles line numbers
 nmap <silent> <C-N> :set invnumber<CR>:set invrelativenumber<CR>
+
+nnoremap <leader>a :Ack
 
 "-----------------
 " Plugin settings
@@ -82,6 +88,16 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_jump_to_buffer = 0
 let g:ctrlp_working_path_mode = 2
-let g:ctrlp_root_markers = ['comp-mdata.pl', '.ACME/', 'content.lst']
 let g:ctrlp_clear_cache_on_exit = 0
 
+if executable('ag')
+    let g:ctrlp_user_cmd = 'ag %s -l --nocolor --hidden -g ""'
+endif
+
+" Ack settings
+" Use ag if available.
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep --smart-case'
+else
+    echom "ag executable not found"
+endif
