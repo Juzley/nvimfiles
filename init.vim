@@ -9,6 +9,8 @@ autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'vim-utils/vim-cscope'
+Plug 'vim-scripts/taglist.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Pychimp/vim-luna'
@@ -17,6 +19,13 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'elmcast/elm-vim'
 Plug 'elixir-lang/vim-elixir'
+
+" Source a local init.vim, to allow per-machine settings, if it exists.
+" Note that we do this within the plugged section to allow the local init.vim
+" to add plugins; plugged does not support multiple begin/end blocks.
+if filereadable(glob('~/.config/nvim/local_init.vim'))
+    source ~/.config/nvim/local_init.vim
+endif
 call plug#end()
 
 "--------------- 
