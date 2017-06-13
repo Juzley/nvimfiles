@@ -68,11 +68,32 @@ set hidden
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
+"--------------------"
+" Functions/Commands "
+"--------------------"
+
+" Taglist toggle. Although taglist has a toggle command, it doesn't support
+" jump the cursor to the buffer on open, which TlistOpen does, hence this
+" function.
+function! TaglistToggle()
+    if bufwinnr('__Tag_List__') == -1
+        TlistOpen
+    else
+        TlistClose
+    endif
+endfunction
+
 "--------------
 " Key mappings
 "--------------
 " Use , forleader
 let mapleader = ","
+
+" Toggle tag list visibility
+map <silent> <F5> :call TaglistToggle()<CR>
+
+" Toggle NERDTree visibility
+map <silent> <F4> :NERDTreeToggle<CR>
 
 " Ctrl+N toggles line numbers
 nmap <silent> <C-N> :set invnumber<CR>:set invrelativenumber<CR>
