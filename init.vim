@@ -40,6 +40,9 @@ set cindent shiftwidth=4
 set tabstop=4
 set cino=(0,:0
 
+" Display column numbers etc.
+set ruler
+
 " Turn on line numbers, and use relative line numbers
 set number
 set relativenumber
