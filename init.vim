@@ -36,8 +36,8 @@ call plug#end()
 " Tab/indent settings
 set tw=79
 set expandtab
-set cindent shiftwidth=4
-set tabstop=4
+set cindent shiftwidth=2
+set tabstop=2
 set cino=(0,:0
 
 " Display column numbers etc.
@@ -101,7 +101,9 @@ map <silent> <F4> :NERDTreeToggle<CR>
 " Ctrl+N toggles line numbers
 nmap <silent> <C-N> :set invnumber<CR>:set invrelativenumber<CR>
 
-nnoremap <leader>a :Ack
+nnoremap <leader>A :Ack
+nnoremap <leader>a :Ack!<CR>
+nnoremap <leader>\ :NERDTreeFind<CR>
 
 "-----------------
 " Plugin settings
