@@ -15,11 +15,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Pychimp/vim-luna'
 Plug 'tpope/vim-unimpaired'
-Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'elmcast/elm-vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'mileszs/ack.vim'
+Plug 'w0rp/ale'
 
 " Source a local init.vim, to allow per-machine settings, if it exists.
 " Note that we do this within the plugged section to allow the local init.vim
@@ -101,7 +101,7 @@ map <silent> <F4> :NERDTreeToggle<CR>
 " Ctrl+N toggles line numbers
 nmap <silent> <C-N> :set invnumber<CR>:set invrelativenumber<CR>
 
-nnoremap <leader>A :Ack
+nnoremap <leader>A :Ack  
 nnoremap <leader>a :Ack!<CR>
 nnoremap <leader>\ :NERDTreeFind<CR>
 
